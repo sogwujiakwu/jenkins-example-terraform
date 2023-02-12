@@ -1,4 +1,4 @@
-#pipeline {
+pipeline {
   agent { label 'linux-ubuntu'}
   options {
     skipDefaultCheckout(true)
