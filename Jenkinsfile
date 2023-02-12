@@ -30,13 +30,13 @@ pipeline {
     stage('terraform') {
       agent {
         docker { 
-          image 'dokken/ubuntu-22.04:latest' 
+          image 'hashicorp/terraform:latest' 
           reuseNode true
           args '--entrypoint='
         }
       }      
       steps {
-        sh './terraformw apply -auto-approve -no-color'
+        sh 'terraform apply -auto-approve -no-color'
       }
     }
   }
