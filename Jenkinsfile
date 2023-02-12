@@ -30,7 +30,7 @@ pipeline {
     stage('terraform') {
       agent {
         docker { 
-          image 'hashicorp/terraform:latest' 
+          image 'dokken/ubuntu-22.04:latest' 
           reuseNode true
           args '--entrypoint='
         }
