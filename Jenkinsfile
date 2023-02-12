@@ -28,6 +28,12 @@ pipeline {
       }
     }
     stage('terraform') {
+      agent {
+        docker { 
+          image 'dokken/ubuntu-22.04:latest' 
+          reuseNode true
+        }
+      }      
       steps {
         sh './terraformw apply -auto-approve -no-color'
       }
